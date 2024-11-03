@@ -1,5 +1,5 @@
 # bert-large-depression-classification-model
-To access my model, please go to [my model's huggingface page](https://huggingface.co/ardavey/bert-large-depression-classification-model/tree/main).
+To access my model, please go to my model's [huggingface page](https://huggingface.co/ardavey/bert-large-depression-classification-model/tree/main).
 
 or you can just copy paste the following code:
 ```python
@@ -9,7 +9,7 @@ classifier = pipeline('text-classification', model='ardavey/bert-large-depressio
 ```
 
 **Example usage**:
-```
+```python
 from transformers import pipeline
 
 classifier = pipeline('text-classification', model='ardavey/bert-large-depression-classification-model')
