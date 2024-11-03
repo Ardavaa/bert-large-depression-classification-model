@@ -1,1 +1,43 @@
-# large-depression-sentiment-analysis
+# bert-large-depression-classification-model
+To access my model, please go to [huggingface.co](https://huggingface.co/ardavey/bert-large-depression-classification-model/tree/main).
+
+or you can just copy paste the following code:
+```python
+from transformers import pipeline
+
+classifier = pipeline('text-classification', model='ardavey/bert-large-depression-classification-model')
+```
+
+**Example usage**:
+```
+from transformers import pipeline
+
+classifier = pipeline('text-classification', model='ardavey/bert-large-depression-classification-model')
+
+text_samples = [
+    "I feel sad and hopeless.",
+    "I'm enjoying my life and feeling great!",
+    "Sometimes I just don't want to get out of bed.",
+    "Life is beautiful and full of opportunities!",
+    "im gonna kill myself"
+]
+
+predictions = classifier(text_samples)
+
+for sample, prediction in zip(text_samples, predictions):
+    print(f"Text: {sample}")
+    print(f"Prediction: {'Depressed' if prediction['label'] == 'LABEL_1' else 'Not Depressed'} (Score: {prediction['score']:.4f})")
+    print()
+```
+
+**Output**:
+```
+Text: The things I used to love don’t bring me any joy anymore. Everything feels empty
+Prediction: Depressed, Score: 0.9950354099273682
+
+Text: I often wonder if things would be better if I just disappeared.
+Prediction: Depressed, Score: 0.970693051815033
+
+Text: Sometimes things get tough, but I know I have the strength to get through it.
+Prediction: Not Depressed, Score: 0.9896683692932129
+```
