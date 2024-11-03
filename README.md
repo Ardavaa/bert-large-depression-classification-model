@@ -20,12 +20,11 @@ text_samples = [
     "Sometimes things get tough, but I know I have the strength to get through it."
 ]
 
-
 predictions = classifier(text_samples)
 
 for sample, prediction in zip(text_samples, predictions):
     print(f"Text: {sample}")
-    print(f"Prediction: {'Depressed' if prediction['label'] == 'LABEL_1' else 'Not Depressed'} (Score: {prediction['score']:.4f})")
+    print(f"Prediction: {'Depressed' if prediction['label'] == 'LABEL_1' else 'Not Depressed'}, Score: {prediction['score']}")
     print()
 ```
 
